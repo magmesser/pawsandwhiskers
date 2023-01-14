@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Chester",
+        "age": 1,
+        "gender": "male",
+        "color": "mixed",
+        "size": "small",
+        "breed": "Calico"
+    },
+    {
+        "name": "Lilly",
+        "age": 1,
+        "gender": "female",
+        "color": "grey",
+        "size": "small",
+        "breed": "American Shorthair"
+    },
+    {
+        "name": "Edgar",
+        "age": 5,
+        "gender": "male",
+        "color": "black",
+        "size": "large",
+        "breed": "American Shorthair"
+    },
+    {
+        "name": "Ginger",
+        "age": 3,
+        "gender": "female",
+        "color": "orange",
+        "size": "medium",
+        "breed": "Orange Tabby"
+    },
+    {
+        "name": "Pepper",
+        "age": 1,
+        "gender": "female",
+        "color": "mixed",
+        "size": "small",
+        "breed": "American Shorthair"
+    },
+    {
+        "name": "Bella",
+        "age": 3,
+        "gender": "female",
+        "color": "mixed",
+        "size": "medium",
+        "breed": "American Wirehair"
+    }
+]
