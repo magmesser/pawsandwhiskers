@@ -38,14 +38,6 @@ Dog.init(
             type: DataTypes.STRING,
             allowNull: false,
             },
-        filename: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            },
-        description: {
-            type: DataTypes.STRING,
-            allowNull: false,
-    },
     },
     {
         sequelize,
