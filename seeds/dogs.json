@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Mochi",
+        "age": 2,
+        "gender": "female",
+        "color": "mixed",
+        "size": "medium",
+        "breed": "Beagle Basset Hound",
+        "filename": "dog1.jpg",
+        "description": "Dog with green harness sitting on the floor."
+    },
+    {
+        "name": "Daisy",
+        "age": 0.5,
+        "gender": "female",
+        "color": "brown",
+        "size": "small",
+        "breed": "Cocker Spaniel",
+        "filename": "dog2.jpg",
+        "description": "Cocker Spaniel puppy lays on a bed."
+    },
+    {
+        "name": "Steve",
+        "age": 1,
+        "gender": "male",
+        "color": "tan",
+        "size": "small",
+        "breed": "Beagle",
+        "filename": "dog3.jpg",
+        "description": "Happy dog smiles with mouth open."
+    },
+    {
+        "name": "Gordon",
+        "age": 6,
+        "gender": "male",
+        "color": "brown",
+        "size": "large",
+        "breed": "Chocolate Lab",
+        "filename": "dog4.jpg",
+        "description": "Unamused dog sitting in a chair with a mug."
+    },
+    {
+        "name": "Kailie",
+        "age": 1,
+        "gender": "female",
+        "color": "spotted",
+        "size": "large",
+        "breed": "Dalmatian",
+        "filename": "dog5.jpg",
+        "description": "Dalmatian close-up with orange background."
+    },
+    {
+        "name": "Anna",
+        "age": 4,
+        "gender": "female",
+        "color": "golden",
+        "size": "large",
+        "breed": "Golden Retriever",
+        "filename": "dog6.jpg",
+        "description": "Golden Retriever sitting in a field with a smile."
+    }
+]
