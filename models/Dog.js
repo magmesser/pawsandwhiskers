@@ -41,10 +41,12 @@ Dog.init(
         filename: {
             type: DataTypes.STRING,
             allowNull: false,
+            defaultValue: "coming-soon.jpg"
         },
         description: {
             type: DataTypes.STRING,
             allowNull: false,
+            defaultValue: "coming soon",
         }
     },
     {
