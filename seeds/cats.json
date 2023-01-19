@@ -5,7 +5,9 @@
         "gender": "male",
         "color": "mixed",
         "size": "small",
-        "breed": "Calico"
+        "breed": "Calico",
+        "filename": "cat1.jpg",
+        "description": "Calico kitten on a rock."
     },
     {
         "name": "Lilly",
@@ -13,7 +15,9 @@
         "gender": "female",
         "color": "grey",
         "size": "small",
-        "breed": "American Shorthair"
+        "breed": "American Shorthair",
+        "filename": "cat2.jpg",
+        "description": "Grey  kitten on a blanket."
     },
     {
         "name": "Edgar",
@@ -21,7 +25,9 @@
         "gender": "male",
         "color": "black",
         "size": "large",
-        "breed": "American Shorthair"
+        "breed": "American Shorthair",
+        "filename": "cat3.jpg",
+        "description": "Adult black cat in a flower pot."
     },
     {
         "name": "Ginger",
@@ -29,7 +35,9 @@
         "gender": "female",
         "color": "orange",
         "size": "medium",
-        "breed": "Orange Tabby"
+        "breed": "Orange Tabby",
+        "filename": "cat4.jpg",
+        "description": "Adult orange cat in a chair."
     },
     {
         "name": "Pepper",
@@ -37,7 +45,9 @@
         "gender": "female",
         "color": "mixed",
         "size": "small",
-        "breed": "American Shorthair"
+        "breed": "American Shorthair",
+        "filename": "cat5.jpg",
+        "description": "Stripped kitten on floor."
     },
     {
         "name": "Bella",
@@ -45,6 +55,8 @@
         "gender": "female",
         "color": "mixed",
         "size": "medium",
-        "breed": "American Wirehair"
+        "breed": "American Wirehair",
+        "filename": "cat6.jpg",
+        "description": "Grey and white adult cat sleeping on the ground outside."
     }
 ]
