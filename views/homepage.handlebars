@@ -1,0 +1,24 @@
+<main>
+    {{#if !loggedIn}}
+    <section class="login-signup">
+        <div class="message">
+        <h2>Please login or sign up to see our available pets.</h2>
+        </div>
+        <div class="login">
+            <!-- create username/email login input -->
+            <!-- create password login input -->
+        </div>
+        <div class="signup">
+            <!-- create username/email signup input -->
+            <!-- create password sign input -->
+        </div>
+
+    </section>
+    {{/if}}
+
+    <section class="gallery">
+        {{#each animalImage}}
+        <img src=`{{img}}`/>
+        {{/each}}
+    </section>
+</main>
