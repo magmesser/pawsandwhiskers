@@ -3,14 +3,14 @@ const { Dog } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
-    try{
+    try {
         const newDog = await Dog.create({
             ...req.body,
             user_id: req.session.user_id,
         });
 
         res.status(200).json(newDog);
-    } catch(err) {
+    } catch (err) {
         res.status(400).json(err);
     }
 });
@@ -24,8 +24,8 @@ router.delete('/:id', withAuth, async (req, res) => {
             },
         });
 
-        if(!dogData) {
-            res.status(404).json({message: 'No dog with that id.' });
+        if (!dogData) {
+            res.status(404).json({ message: 'No dog with that id.' });
             return;
         }
 

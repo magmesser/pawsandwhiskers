@@ -3,14 +3,14 @@ const { Cat } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
-    try{
+    try {
         const newCat = await Cat.create({
             ...req.body,
             user_id: req.session.user_id,
         });
 
         res.status(200).json(newCat);
-    } catch(err) {
+    } catch (err) {
         res.status(400).json(err);
     }
 });
@@ -24,8 +24,8 @@ router.delete('/:id', withAuth, async (req, res) => {
             },
         });
 
-        if(!catData) {
-            res.status(404).json({message: 'No cat with that id.' });
+        if (!catData) {
+            res.status(404).json({ message: 'No cat with that id.' });
             return;
         }
 
