@@ -7,14 +7,12 @@ const withAuth = (req, res, next) => {
 };
 
 const adminAuth = (req, res, next) => {
-    const admin = req.body.admin;
 
-    if(admin) {
+    if(req.session.admin && req.session.logged_in) {
         next();
     } else {
         return res.status(401).json('You do not have permission!')
-    }
-
+    };
 };
 
 module.exports = { withAuth, adminAuth };

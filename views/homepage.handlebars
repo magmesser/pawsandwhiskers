@@ -1,5 +1,4 @@
-<main>
-    {{#if !loggedIn}}
+{{!-- <main> --}}
     <section class="login-signup">
         <div class="message">
         <h2>Please login or sign up to see our available pets.</h2>
@@ -43,13 +42,11 @@
   </div>
 </div>
 
-<script src="./js/login.js"></script>
-
-    {{/if}}
-
     <section class="gallery">
         {{#each animalImage}}
         <img src=`{{img}}`/>
         {{/each}}
     </section>
-</main>
+
+<script src="./js/login.js"></script>
+{{!-- </main> --}}
