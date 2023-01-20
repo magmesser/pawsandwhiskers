@@ -3,18 +3,18 @@
         "username": "admin",
         "email": "admin@paws.com",
         "password": "password",
-        "admin": "admin"
+        "admin": true
     },
     {
         "username": "ilovecats",
         "email": "cats4@email.com",
         "password": "lintroller1",
-        "admin": "user"
+        "admin": false
     },
     {
         "username": "dogzrule",
         "email": "ruffruff@gmail.com",
         "password": "saveapet9",
-        "admin": "user"
+        "admin": false
     }
 ]

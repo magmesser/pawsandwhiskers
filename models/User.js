@@ -36,11 +36,8 @@ User.init(
       },
     },
     admin: {
-      type: DataTypes.STRING,
+      type: DataTypes.BOOLEAN,
       allowNull: false,
-      validate: {
-        isIn: [["admin", "user"]],
-      },
     },
   },
   {

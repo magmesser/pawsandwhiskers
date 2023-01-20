@@ -6,4 +6,15 @@ const withAuth = (req, res, next) => {
     }
 };
 
-module.exports = withAuth;
+const adminAuth = (req, res, next) => {
+    const admin = req.body.admin;
+
+    if(admin) {
+        next();
+    } else {
+        return res.status(401).json('You do not have permission!')
+    }
+
+};
+
+module.exports = { withAuth, adminAuth };
