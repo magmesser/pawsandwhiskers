@@ -20,7 +20,24 @@ router.get('/', async (req, res) => {
     }
 });
 
-// Do we need ('/pets/:id') get?
+// /pets/:id get by id
+router.get('/pets/:id', async (req, res) => {
+  try {
+
+        const dogData = await Dog.findByPk(req.params.id,{});
+        const catData = await Cat.findByPk(req.params.id,{});
+
+        const dogs = dogData.get((dog) => dog.get({ plain: true }));
+        const cats = catData.get((cat) => cat.get({ plain: true }));
+    
+        res.render('homepage', { 
+          ...dog, ...cat, 
+          logged_in: req.session.logged_in 
+        });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 // Render login screen
 router.get('/login', (req, res) => {
