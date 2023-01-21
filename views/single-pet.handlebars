@@ -1,22 +1,18 @@
 <section class="container">
 
   <section class="flex-row justify-center">
-    {{#each dogs as |dog|}}
       <div style="height: 400px; width: 400px; border: radius 25%;" class="card">
-        <a href="/pets/dogs/{{id}}">
        
           <h2>{{dog.name}}</h2>
           <div class="card-body">
           <img style="height:250px" src="/images/dogs/{{dog.filename}}" alt="{{dog.description}}" />
           <p>{{dog.name}} is a {{dog.age}} year old, {{dog.size}} sized, {{dog.gender}} {{dog.breed}} with {{dog.color}} fur.</p>
         </div>
-        </a>
+
       </div>
-    {{/each}}
   </section>
 
 <section class="flex-row justify-center">
-    {{#each cats as |cat|}}
       
       <div style="height: 400px; width: 400px; border: radius 25%;" class="card">
         <a href="/pets/cats/{{id}}">
@@ -28,7 +24,6 @@
         </div>
         </a>
       </div>
-    {{/each}}
   </section>
 
 </section>
