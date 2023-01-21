@@ -3,7 +3,7 @@
         "name": "Mochi",
         "age": 2,
         "gender": "female",
-        "color": "mixed",
+        "color": "black and brown",
         "size": "medium",
         "breed": "Beagle Basset Hound",
         "filename": "dog1.jpg",
@@ -11,7 +11,7 @@
     },
     {
         "name": "Daisy",
-        "age": 0.5,
+        "age": 1,
         "gender": "female",
         "color": "brown",
         "size": "small",
