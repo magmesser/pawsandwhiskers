@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Dog } = require('../../models');
 const adminAuth = require('../../utils/auth');
+
 // adminAuth
 router.post('/', async (req, res) => {
     try {
