@@ -1,0 +1,25 @@
+<section class="container">
+
+  <section class="flex-row justify-center">
+    {{#each dogs as |dog|}}
+      <div class="row align-center mb-5">
+        <div class="col-md-6">
+          <h2>{{dog.name}}</h2>
+          <img src="../public/images/dogs/{{dog.filename}}" alt="{{dog.description}}" />
+        </div>
+      </div>
+    {{/each}}
+  </section>
+
+<section class="flex-row justify-center">
+    {{#each cats as |cat|}}
+      <div class="row align-center mb-5">
+        <div class="col-md-6">
+          <h2>{{cat.name}}</h2>
+          <img src="/images/{{cat.filename}}" alt="{{cat.description}}" />
+        </div>
+      </div>
+    {{/each}}
+  </section>
+
+</section>
