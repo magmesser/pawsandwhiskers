@@ -2,8 +2,16 @@ const router = require('express').Router();
 const { Dog, Cat, User } = require('../models');
 // const withAuth = require('../utils/auth'); withAuth not required on routes at this time
 
-// Get all pets - cats and dogs
 router.get('/', async (req, res) => {
+  try {
+    res.render('homepage', {})
+  } catch (err) {
+        res.status(500).json(err);
+    }
+})
+
+// Get all pets - cats and dogs
+router.get('/pets', async (req, res) => {
     try {
         const dogData = await Dog.findAll({});
         const catData = await Cat.findAll({});
@@ -11,7 +19,7 @@ router.get('/', async (req, res) => {
         const dogs = dogData.map((dog) => dog.get({ plain: true }));
         const cats = catData.map((cat) => cat.get({ plain: true }));
 
-        res.render('homepage', { 
+        res.render('user', { 
             dogs, cats, 
             logged_in: req.session.logged_in 
           });

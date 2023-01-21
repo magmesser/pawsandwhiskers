@@ -1,8 +1,8 @@
 const router = require('express').Router();
 const { Dog } = require('../../models');
 const adminAuth = require('../../utils/auth');
-
-router.post('/', adminAuth, async (req, res) => {
+// adminAuth
+router.post('/', async (req, res) => {
     try {
         const newDog = await Dog.create({
             ...req.body,
@@ -14,8 +14,8 @@ router.post('/', adminAuth, async (req, res) => {
         res.status(400).json(err);
     }
 });
-
-router.delete('/:id', adminAuth, async (req, res) => {
+// adminAuth
+router.delete('/:id', async (req, res) => {
     try {
         const dogData = await Dog.destroy({
             where: {
