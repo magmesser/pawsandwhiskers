@@ -1,0 +1,29 @@
+<section class="container">
+
+  <section class="flex-row justify-center">
+      <div style="height: 400px; width: 400px; border: radius 25%;" class="card">
+       
+          <h2>{{dog.name}}</h2>
+          <div class="card-body">
+          <img style="height:250px" src="/images/dogs/{{dog.filename}}" alt="{{dog.description}}" />
+          <p>{{dog.name}} is a {{dog.age}} year old, {{dog.size}} sized, {{dog.gender}} {{dog.breed}} with {{dog.color}} fur.</p>
+        </div>
+
+      </div>
+  </section>
+
+<section class="flex-row justify-center">
+      
+      <div style="height: 400px; width: 400px; border: radius 25%;" class="card">
+        <a href="/pets/cats/{{id}}">
+       
+          <h2>{{cat.name}}</h2>
+          <div class="card-body">
+          <img style="height:250px" src="/images/cats/{{cat.filename}}" alt="{{cat.description}}" />
+          <p>{{cat.name}} is a {{cat.age}} year old, {{cat.size}} sized, {{cat.gender}} {{cat.breed}} with {{cat.color}} fur.</p>
+        </div>
+        </a>
+      </div>
+  </section>
+
+</section>
