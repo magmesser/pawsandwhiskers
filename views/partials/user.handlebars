@@ -1,0 +1,22 @@
+ {{#if projects.length}}
+  <div class="col-md-6 project-list">
+    <h3>Pets:</h3>
+
+    {{#each projects as |project|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>
+
+   {{/if}}
+
+    <section class="gallery">
+        {{#each animalImage}}
+        <img src=`{{img}}`/>
+        {{/each}}
+    </section>
