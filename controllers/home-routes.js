@@ -36,20 +36,83 @@ router.get("/pets", async (req, res) => {
   }
 });
 
-// GET dog by id/image link
-router.get("/pets/dog/:id", async (req, res) => {
+// GET all dogs nav link
+router.get("/dogs", async (req, res) => {
   try {
-    const dogData = await Dog.findOne({
-      where: {id: req.params.id}
+    const dogData = await Dog.findAll({});
+    const dogs = dogData.map((dog) => dog.get({ plain: true }));
+
+    res.render("pets", {
+      dogs,
+      logged_in: true
     });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 
-    const dog = dogData.get({ plain: true });
+// GET dog by id/image link
+router.get("/dogs/:id", async (req, res) => {
+    try {
+      const dogData = await Dog.findByPk(req.params.id);
+  
+      const dog = dogData.get({ plain: true });
+  
+      res.render('single-dog', { 
+        ...dog,
+        logged_in: req.session.logged_ing });
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+  });
 
-    res.render('single-pet', { 
-      ...dog,
+// GET all dogs nav link
+router.get("/cats", async (req, res) => {
+  try {
+    const catData = await Cat.findAll({});
+    const cats = catData.map((cat) => cat.get({ plain: true }));
+
+    res.render("pets", {
+      cats,
+      logged_in: true
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+// GET cat by id/image link
+router.get("/cats/:id", async (req, res) => {
+  try {
+    const catData = await Cat.findByPk(req.params.id);
+
+    const cat = catData.get({ plain: true });
+
+    res.render('single-cat', { 
+      ...cat,
       logged_in: req.session.logged_ing });
   } catch (err) {
     console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+// GET all pets under Admin Profile
+router.get("/admin", async (req, res) => {
+  try {
+    const dogData = await Dog.findAll({});
+    const catData = await Cat.findAll({});
+    const dogs = dogData.map((dog) => dog.get({ plain: true }));
+    const cats = catData.map((cat) => cat.get({ plain: true }));
+
+    res.render("admin", {
+      dogs, cats,
+      logged_in: true
+    });
+  } catch (err) {
     res.status(500).json(err);
   }
 });
