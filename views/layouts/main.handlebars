@@ -21,12 +21,12 @@
             <h1 class="display-4">Paws & Whiskers</h1>
 
             <nav>
-                <a href="/">Home </a>|
+                <a href="/pets" class='text-decoration-line: none text-white pr-10'>Home</a>|
                 {{#if logged_in}}
-                <a href="/user"> Manage </a> |
-                <button class="no-button" id="logout">Logout</button>
+                <a href="/user" class='text-decoration-line: none text-white pr-5 pl-5'> Manage</a> |
+                <button class='text-decoration-line: none; hover:underline text-white pl-10' id="logout">Logout</button>
                 {{else}}
-                <a href="/login">Login</a>
+                <a href="/login" class='text-decoration-line: none; hover:underline text-white pl-10'>Login</a>
                 {{/if}}
             </nav>
         </div>
