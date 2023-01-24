@@ -2,6 +2,24 @@ const router = require('express').Router();
 const { Dog } = require('../../models');
 const adminAuth = require('../../utils/auth');
 
+// GET dog by id/image link
+// router.get("/:id", async (req, res) => {
+//     try {
+//       const dogData = await Dog.findOne({
+//         where: {id: req.params.id}
+//       });
+  
+//       const dog = dogData.get({ plain: true });
+  
+//       res.render('single-pet', { 
+//         ...dog,
+//         logged_in: req.session.logged_ing });
+//     } catch (err) {
+//       console.log(err);
+//       res.status(500).json(err);
+//     }
+//   });
+
 // adminAuth
 router.post('/', async (req, res) => {
     try {

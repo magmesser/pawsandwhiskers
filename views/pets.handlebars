@@ -2,8 +2,8 @@
 
   <section class="grid grid-cols-1 md:grid-cols-3 gap-4">
     {{#each dogs as |dog|}}
-      <div style="border radius 25%;" class="card">
-        <a href="/pets/dogs/{{id}}">
+      <div style="height: 400px; width: 400px; border: radius 25%;" class="card">
+        <a href="/dogs/{{dog.id}}">
        
           <h2>{{dog.name}}</h2>
           <div class="card-body grid place-items-center	">
@@ -18,8 +18,8 @@
 <section class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4 mb-10">
     {{#each cats as |cat|}}
       
-      <div style="border: radius 25%;" class="card">
-        <a href="/pets/cats/{{id}}">
+      <div style="height: 400px; width: 400px; border: radius 25%;" class="card">
+        <a href="/cats/{{cat.id}}">
        
           <h2>{{cat.name}}</h2>
           <div class="card-body grid place-items-center	">
