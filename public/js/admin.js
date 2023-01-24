@@ -1,44 +1,43 @@
-//JS pulled from the mini proyect's profile.js.
 
 const newFormHandler = async (event) => {
-    event.preventDefault();
+  event.preventDefault();
+
+  const name = document.querySelector('#pet-name').value.trim();
+  const breed = document.querySelector('#pet-breed').value.trim();
+  const age = document.querySelector('#pet-age').value.trim();
+  const size = document.querySelector('#pet-size').value.trim();
+  const gender = document.querySelector('#pet-gender').value.trim();
+  const description = document.querySelector('#pet-desc').value.trim();
+  const color = document.querySelector('#pet-color').value.trim();
   
-    const name = document.querySelector('#pet-name').value.trim();
-    const needed_funding = document.querySelector('#project-funding').value.trim();
-    const description = document.querySelector('#project-desc').value.trim();
+  const image = document.getElementById('output');
   
-    if (name && needed_funding && description) {
-      const response = await fetch(`/api/projects`, {
-        method: 'POST',
-        body: JSON.stringify({ name, needed_funding, description }),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
   
-      if (response.ok) {
-        document.location.replace('/profile');
-      } else {
-        alert('Failed to create project');
-      }
+  if (name && breed && age && size && gender && description && color) {
+    const response = await fetch(`/api/dogRoutes`, {
+      method: 'POST',
+      body: JSON.stringify({
+        name,
+        breed,
+        age,
+        size,
+        gender,
+        description,
+        color,
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (response.ok) {
+      document.location.replace('/admin');
+    } else {
+      alert('Failed to create listing');
     }
-  };
-  
-  const delButtonHandler = async (event) => {
-    if (event.target.hasAttribute('data-id')) {
-      const id = event.target.getAttribute('data-id');
-  
-      const response = await fetch(`/api/projects/${id}`, {
-        method: 'DELETE',
-      });
-  
-      if (response.ok) {
-        document.location.replace('/admin');
-      } else {
-        alert('Failed to delete pet');
-      }
-    }
-  };
+  }
+
+};
   
   document
     .querySelector('.new-pet')
@@ -50,6 +49,5 @@ const newFormHandler = async (event) => {
 
 //Script for image upload.
     var loadFile = function(event) {
-        var image = document.getElementById('output');
         image.src=URL.createObjectURL(event.target.files[0]);
     };    
