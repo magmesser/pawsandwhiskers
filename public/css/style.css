@@ -1,1 +1,15 @@
+.no-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 100%;
+    color: #007bff;
+}
+
+.no-button:hover {
+    color: #0055af;
+    text-decoration: none;
+}
 
