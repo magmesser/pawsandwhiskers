@@ -37,16 +37,30 @@ router.get("/pets", async (req, res) => {
 });
 
 // GET dog by id/image link
-router.get("/pets/dog/:id", async (req, res) => {
+router.get("/dogs/:id", async (req, res) => {
+    try {
+      const dogData = await Dog.findByPk(req.params.id);
+  
+      const dog = dogData.get({ plain: true });
+  
+      res.render('single-dog', { 
+        ...dog,
+        logged_in: req.session.logged_ing });
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+  });
+
+// GET cat by id/image link
+router.get("/cats/:id", async (req, res) => {
   try {
-    const dogData = await Dog.findOne({
-      where: {id: req.params.id}
-    });
+    const catData = await Cat.findByPk(req.params.id);
 
-    const dog = dogData.get({ plain: true });
+    const cat = catData.get({ plain: true });
 
-    res.render('single-pet', { 
-      ...dog,
+    res.render('single-cat', { 
+      ...cat,
       logged_in: req.session.logged_ing });
   } catch (err) {
     console.log(err);
