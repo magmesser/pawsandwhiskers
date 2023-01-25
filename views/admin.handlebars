@@ -1,88 +1,103 @@
 <div class="row">
   <div class="col-auto">
-    <h2>Welcome, {{name}}!</h2>
+    <h2 class="text-4xl">Welcome, {{username}}!</h2>
   </div>
 </div>
 
-<div class="row mt-4">
-  <div class="col-md-6">
-    <h3>Post New Pet:</h3>
+<div class="form mt-4">
+  <div class="col-md-12">
+    <h3 class="text-2xl p-2">Post New Pet:</h3>
 
-    <form class="form new-pet-form">
-      <div class="form-group">
-        <label for="pet-name">Pet name:</label>
-        <input class="form-input" type="text" id="pet-name" name="pet-name" />
-      </div>
+    <form class="form new-pet-form p-2 m-2 rounded" style="background-color: rgba(0, 0, 0, 0.2);">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="pet-name">Pet name:</label>
+          <input class="form-control" type="text" id="pet-name" name="pet-name">
+        </div>
 
-      <div class="form-group">
-        <label for="pet-breed">Breed:</label>
-        <input class="form-input" type="number" id="pet-breed" name="pet-breed" />
-      </div>
+        <div class="form-group col-md-6">
+          <label for="pet-breed">Breed:</label>
+          <input class="form-control" type="number" id="pet-breed" name="pet-breed" />
+        </div>
 
-      <div class="form-group">
-        <label for="pet-gender">Gender:</label>
-        <textarea class="form-input" id="pet-gender" name="pet-gender"></textarea>
-      </div>
-      
-      <div class="form-group">
-        <label for="pet-color">Color:</label>
-        <textarea class="form-input" id="pet-color" name="pet-color"></textarea>
-      </div>
-      
-      <div class="form-group">
-        <label for="pet size">Size:</label>
-        <textarea class="form-input" id="pet-size" name="pet-size"></textarea>
-      </div>
+        <div class="form-group col-md-3">
+          <label for="pet-gender">Gender:</label>
+          <textarea class="form-control" id="pet-gender" name="pet-gender"></textarea>
+        </div>
 
-      <div class="form-group">
-      <input type="file" accept="image/*" onchange="loadFile(event)">
-      <p><img id="output" width="200"/></p>
-      </div>
+        <div class="form-group col-md-3">
+          <label for="pet-color">Color:</label>
+          <textarea class="form-control" id="pet-color" name="pet-color"></textarea>
+        </div>
 
-      <div class="form-group">
-        <label for="pet-age">Age:</label>
-        <textarea class="form-input" id="pet-age" name="pet-age"></textarea>
-      </div>
+        <div class="form-group col-md-3">
+          <label for="pet size">Size:</label>
+          <textarea class="form-control" id="pet-size" name="pet-size"></textarea>
+        </div>
 
-      <div class="form-group">
-        <label for="pet-desc">Description:</label>
-        <textarea class="form-input" id="pet-desc" name="pet-desc"></textarea>
-      </div>
+        <div class="form-group col-md-3">
+          <label for="pet-age">Age:</label>
+          <textarea class="form-control" id="pet-age" name="pet-age"></textarea>
+        </div>
 
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
+
+        <div class="form-group col-md-12">
+          <label for="pet-desc">Description:</label>
+          <textarea class="form-control" id="pet-desc" name="pet-desc"></textarea>
+        </div>
+
+          <div class="form-group col-md-12">
+          <input type="file" accept="image/*" onchange="loadFile(event)">
+          <p><img id="output" width="200" /></p>
+        </div>
+
+        <div class="form-group col-md-1 bg-blue-500 rounded text-center m-2 center-item">
+          <button type="submit" class="btn btn-primary">Create</button>
+        </div>
       </div>
     </form>
   </div>
 
- 
- {{#if dogs.length}}
-    <div class='col-md-6 dog-list'>
-      <h3>Dog Listings:</h3>
 
-      {{#each dogs as |dog|}}
-        <div class='row mb-2'>
-          <div class='col-md-8'>
-            <h4><a href='/dog/{{dog.id}}'>{{dog.name}}</a></h4>
-          </div>
-        {{/each}}   
-        {{/if}}
- 
- {{#if cats.length}}
-    <div class='col-md-6 dog-list'>
-      <h3>Cat Listings:</h3>
+  <section class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    {{#each dogs as |dog|}}
+    <div style="height: 410px; border: radius 25%;" class="card">
+      <a style="text-decoration:none" href="/dogs/{{dog.id}}">
 
-      {{#each cats as |cat|}}
-        <div class='row mb-2'>
-          <div class='col-md-8'>
-            <h4><a href='/cat/{{cat.id}}'>{{cat.name}}</a></h4>
-          </div>
-          {{/each}}   
-        {{/if}}
-
-    
+        <p class="text-center text-2xl hover:font-bold">{{dog.name}}</p>
+        <div class="card-body grid place-items-center">
+          <img style="height:250px" src="/images/dogs/{{dog.filename}}" alt="{{dog.description}}" />
+          <p>{{dog.name}} is a {{dog.age}} year old, {{dog.size}} sized, {{dog.gender}} {{dog.breed}} with {{dog.color}}
+            fur.</p>
+        </div>
+      </a>
       <div class="col-md-4">
         <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
       </div>
-    
-<script src="./js/admin.js"></script>
+    </div>
+    {{/each}}
+  </section>
+
+  <section class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4 mb-10">
+    {{#each cats as |cat|}}
+
+    <div style="height: 410px; border: radius 25%;" class="card">
+      <a style="text-decoration:none" href="/cats/{{cat.id}}">
+
+        <p class="text-center text-2xl hover:font-bold">{{cat.name}}</h2>
+          <div class="card-body grid place-items-center	">
+            <img style="height:250px" src="/images/cats/{{cat.filename}}" alt="{{cat.description}}" />
+            <p>{{cat.name}} is a {{cat.age}} year old, {{cat.size}} sized, {{cat.gender}} {{cat.breed}} with
+              {{cat.color}}
+              fur.</p>
+          </div>
+      </a>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </section>
+
+
+  <script src="./js/admin.js"></script>
