@@ -40,12 +40,8 @@ const newFormHandler = async (event) => {
 };
   
   document
-    .querySelector('.new-pet')
+    .querySelector('.form new-pet-form p-2 m-2 rounded')
     .addEventListener('submit', newFormHandler);
-  
-  document
-    .querySelector('.pet-list')
-    .addEventListener('click', delButtonHandler);
 
 //Script for image upload.
     var loadFile = function(event) {
