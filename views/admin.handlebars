@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-auto">
-    <h2 class="text-4xl">Welcome, {{username}}!</h2>
+    <h2 class="text-4xl" style="font-family: 'Amatic SC', cursive; font-size: 4.0em">Welcome!</h2>
   </div>
 </div>
 
@@ -8,7 +8,13 @@
   <div class="col-md-12">
     <h3 class="text-2xl p-2">Post New Pet:</h3>
 
-    <form class="form new-pet-form p-2 m-2 rounded" style="background-color: rgba(0, 0, 0, 0.2);">
+    <button onclick="renderDogForm()" id='new-dog-button'
+      class="col-md-3 bg-blue-500 rounded text-center m-2 center-item">Add New Dog</button>
+    <button onclick="renderCatForm()" id='new-cat-button'
+      class="col-md-3 bg-blue-500 rounded text-center m-2 center-item">Add New Cat</button>
+
+    <form id='new-dog-form' class="form new-dog-form p-2 m-2 rounded"
+      style="display:none;background-color: rgba(0, 0, 0, 0.2)">
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="pet-name">Pet name:</label>
@@ -17,12 +23,16 @@
 
         <div class="form-group col-md-6">
           <label for="pet-breed">Breed:</label>
-          <input class="form-control" type="number" id="pet-breed" name="pet-breed" />
+          <input class="form-control" type="text" id="pet-breed" name="pet-breed" />
         </div>
 
         <div class="form-group col-md-3">
           <label for="pet-gender">Gender:</label>
-          <textarea class="form-control" id="pet-gender" name="pet-gender"></textarea>
+           <input class="form-control" list="genderlistOptions" id="pet-gender" placeholder="Search">
+           <datalist id="genderlistOptions">
+          <option value="Male">
+          <option value="Female">
+          </datalist>
         </div>
 
         <div class="form-group col-md-3">
@@ -31,13 +41,18 @@
         </div>
 
         <div class="form-group col-md-3">
-          <label for="pet size">Size:</label>
-          <textarea class="form-control" id="pet-size" name="pet-size"></textarea>
+           <label for="pet-size">Size:</label>
+          <input class="form-control" list="sizelistOptions" id="pet-size" placeholder="Search">
+        <datalist id="sizelistOptions">
+          <option value="Small">
+          <option value="Medium">
+          <option value="Large">
+        </datalist>
         </div>
 
-        <div class="form-group col-md-3">
+       <div class="form-group col-md-3">
           <label for="pet-age">Age:</label>
-          <textarea class="form-control" id="pet-age" name="pet-age"></textarea>
+          <input class="form-control" type="number" id="pet-age" name="pet-age">
         </div>
 
 
@@ -46,7 +61,66 @@
           <textarea class="form-control" id="pet-desc" name="pet-desc"></textarea>
         </div>
 
-          <div class="form-group col-md-12">
+        <div class="form-group col-md-12">
+          <input type="file" accept="image/*" onchange="loadFile(event)">
+          <p><img id="output" width="200" /></p>
+        </div>
+
+        <div class="form-group col-md-1 bg-blue-500 rounded text-center m-2 center-item">
+          <button type="submit" class="btn btn-primary">Create</button>
+        </div>
+      </div>
+    </form>
+
+    <form id='new-cat-form' class="form new-cat-form p-2 m-2 rounded"
+      style="display:none;background-color: rgba(0, 0, 0, 0.2)">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="pet-name">Pet name:</label>
+          <input class="form-control" type="text" id="pet-name" name="pet-name">
+        </div>
+
+        <div class="form-group col-md-6">
+          <label for="pet-breed">Breed:</label>
+          <input class="form-control" type="text" id="pet-breed" name="pet-breed" />
+        </div>
+
+         <div class="form-group col-md-3">
+          <label for="pet-gender">Gender:</label>
+           <input class="form-control" list="genderlistOptions" id="pet-gender" placeholder="Search">
+           <datalist id="genderlistOptions">
+          <option value="Male">
+          <option value="Female">
+          </datalist>
+        </div>
+
+        <div class="form-group col-md-3">
+          <label for="pet-color">Color:</label>
+          <textarea class="form-control" id="pet-color" name="pet-color"></textarea>
+        </div>
+
+        <div class="form-group col-md-3">
+          <label for="pet-size">Size:</label>
+          <input class="form-control" list="sizelistOptions" id="pet-size" placeholder="Search">
+        <datalist id="sizelistOptions">
+          <option value="Small">
+          <option value="Medium">
+          <option value="Large">
+        </datalist>
+        </div>
+
+        <div class="form-group col-md-3">
+          <label for="pet-age">Age:</label>
+          <input class="form-control" type="number" id="pet-age" name="pet-age">
+        </div>
+
+
+        <div class="form-group col-md-12">
+          <label for="pet-desc">Description:</label>
+          <textarea class="form-control" id="pet-desc" name="pet-desc"></textarea>
+        </div>
+
+        <div class="form-group col-md-12">
           <input type="file" accept="image/*" onchange="loadFile(event)">
           <p><img id="output" width="200" /></p>
         </div>
@@ -58,13 +132,15 @@
     </form>
   </div>
 
+  
+
 
   <section class="grid grid-cols-1 md:grid-cols-3 gap-4">
     {{#each dogs as |dog|}}
     <div style="height: 410px; border: radius 25%;" class="card">
       <a style="text-decoration:none" href="/dogs/{{dog.id}}">
 
-        <p class="text-center text-2xl hover:font-bold">{{dog.name}}</p>
+        <p class="text-center text-2xl hover:font-bold" style="font-family: 'Amatic SC', cursive; font-size: 2.0em">{{dog.name}}</p>
         <div class="card-body grid place-items-center">
           <img style="height:250px" src="/images/dogs/{{dog.filename}}" alt="{{dog.description}}" />
           <p>{{dog.name}} is a {{dog.age}} year old, {{dog.size}} sized, {{dog.gender}} {{dog.breed}} with {{dog.color}}
@@ -84,7 +160,7 @@
     <div style="height: 410px; border: radius 25%;" class="card">
       <a style="text-decoration:none" href="/cats/{{cat.id}}">
 
-        <p class="text-center text-2xl hover:font-bold">{{cat.name}}</h2>
+        <p class="text-center text-2xl hover:font-bold" style="font-family: 'Amatic SC', cursive; font-size: 2.0em">{{cat.name}}</h2>
           <div class="card-body grid place-items-center	">
             <img style="height:250px" src="/images/cats/{{cat.filename}}" alt="{{cat.description}}" />
             <p>{{cat.name}} is a {{cat.age}} year old, {{cat.size}} sized, {{cat.gender}} {{cat.breed}} with
@@ -101,3 +177,15 @@
 
 
   <script src="./js/admin.js"></script>
+  <script>
+    function renderDogForm() {
+
+      document.getElementById("new-dog-form").style.display = '';
+    }
+  </script>
+  <script>
+    function renderCatForm() {
+
+      document.getElementById("new-cat-form").style.display = '';
+    }
+  </script>

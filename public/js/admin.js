@@ -89,7 +89,14 @@ document
 
   
 
-//Script for image upload.
-    var loadFile = function(event) {
-        image.src=URL.createObjectURL(event.target.files[0]);
-    };    
+    const fileInput = document.querySelector("#pet-image");
+    const formData = new FormData();
+    
+    formData.append("image", fileInput.files[0]);
+    
+    const options = {
+      method: "POST",
+      body: formData,
+    };
+    
+    fetch("api/", options);
