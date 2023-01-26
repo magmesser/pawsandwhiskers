@@ -1,10 +1,16 @@
 <section class="container p-10">
   <section class="grid place-items-center">
-      <div style=" border: radius 25%;" class="card">
-       <a style="text-decoration:none" href="/pets">
-          <h2 style="font-family: 'Amatic SC', cursive; font-size: 2.0em">{{name}}</h2>
-          <div class="card-body">
-          <img style="height:500px" src="/images/dogs/{{filename}}" alt="{{description}}" />
+    <div style=" border: radius 25%;" class="card">
+      <a style="text-decoration:none" href="/pets">
+        <h2
+          style="font-family: 'Amatic SC', cursive; font-size: 2.0em"
+        >{{name}}</h2>
+        <div class="card-body">
+          <img
+            style="height:500px"
+            src="/images/dogs/{{filename}}"
+            alt="{{description}}"
+          />
           <ul>
             <li>Name: {{name}} </li>
             <li>Age: {{age}} year(s) </li>
@@ -14,6 +20,15 @@
             <li>Color: {{color}} </li>
           </ul>
         </div>
-        </a>
-      </div>
+      </a>
+    </div>
+    {{! Back Button }}
+    <br /><br />
+    <a style="text-decoration:none" href="/pets">
+      <button
+        class="flex justify-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+      >Back
+      </button>
+    </a>
   </section>
+</section>
