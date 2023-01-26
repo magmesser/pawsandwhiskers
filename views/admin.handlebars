@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-auto">
-    <h2 class="text-4xl">Welcome, {{username}}!</h2>
+    <h2 class="text-4xl" style="font-family: 'Amatic SC', cursive; font-size: 4.0em">Welcome!</h2>
   </div>
 </div>
 
@@ -64,7 +64,7 @@
     <div style="height: 410px; border: radius 25%;" class="card">
       <a style="text-decoration:none" href="/dogs/{{dog.id}}">
 
-        <p class="text-center text-2xl hover:font-bold">{{dog.name}}</p>
+        <p class="text-center text-2xl hover:font-bold" style="font-family: 'Amatic SC', cursive; font-size: 2.0em">{{dog.name}}</p>
         <div class="card-body grid place-items-center">
           <img style="height:250px" src="/images/dogs/{{dog.filename}}" alt="{{dog.description}}" />
           <p>{{dog.name}} is a {{dog.age}} year old, {{dog.size}} sized, {{dog.gender}} {{dog.breed}} with {{dog.color}}
@@ -84,7 +84,7 @@
     <div style="height: 410px; border: radius 25%;" class="card">
       <a style="text-decoration:none" href="/cats/{{cat.id}}">
 
-        <p class="text-center text-2xl hover:font-bold">{{cat.name}}</h2>
+        <p class="text-center text-2xl hover:font-bold" style="font-family: 'Amatic SC', cursive; font-size: 2.0em">{{cat.name}}</h2>
           <div class="card-body grid place-items-center	">
             <img style="height:250px" src="/images/cats/{{cat.filename}}" alt="{{cat.description}}" />
             <p>{{cat.name}} is a {{cat.age}} year old, {{cat.size}} sized, {{cat.gender}} {{cat.breed}} with
