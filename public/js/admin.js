@@ -91,26 +91,41 @@ document
     .querySelector('.new-cat-form')
     .addEventListener('submit', newCatForm);
 
-  
 
-<<<<<<< Admin-js/hb
-    const fileInput = document.querySelector("#pet-image");
-    const formData = new FormData();
-    
-    formData.append("image", fileInput.files[0]);
-    
-    const options = {
-      method: "POST",
-      body: formData,
-    };
-    
-    fetch("api/", options);
-=======
-//Script for image upload.
-var loadFile = function (event) {
-  image.src = URL.createObjectURL(event.target.files[0]);
+const delDogButtonHandler = async (event) => {
+  if (event.target.hasAttribute('data-id')) {
+    const id = event.target.getAttribute('data-id');
+
+    const response = await fetch(`/api/dogs/${id}`, {
+      method: 'DELETE',
+    });
+
+    if (response.ok) {
+      document.location.replace('/profile');
+    } else {
+      alert('Failed to delete dog');
+    }
+  }
 };
+document
+  .querySelector('#deleteID')
+  .addEventListener('click', delDogButtonHandler);
 
-
-
->>>>>>> main
+  const delCatButtonHandler = async (event) => {
+    if (event.target.hasAttribute('data-id')) {
+      const id = event.target.getAttribute('data-id');
+  
+      const response = await fetch(`/api/cats/${id}`, {
+        method: 'DELETE',
+      });
+  
+      if (response.ok) {
+        document.location.replace('/profile');
+      } else {
+        alert('Failed to delete cat');
+      }
+    }
+  };
+  document
+    .querySelector('#deleteID')
+    .addEventListener('click', delCatButtonHandler);

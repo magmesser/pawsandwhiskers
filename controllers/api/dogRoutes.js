@@ -1,27 +1,9 @@
 const router = require('express').Router();
 const { Dog } = require('../../models');
-const adminAuth = require('../../utils/auth');
-
-// GET dog by id/image link
-// router.get("/:id", async (req, res) => {
-//     try {
-//       const dogData = await Dog.findOne({
-//         where: {id: req.params.id}
-//       });
-  
-//       const dog = dogData.get({ plain: true });
-  
-//       res.render('single-pet', { 
-//         ...dog,
-//         logged_in: req.session.logged_ing });
-//     } catch (err) {
-//       console.log(err);
-//       res.status(500).json(err);
-//     }
-//   });
+const { adminAuth, withAuth } = require('../../utils/auth');
 
 // adminAuth
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try {
         const newDog = await Dog.create({
             ...req.body,
@@ -33,8 +15,9 @@ router.post('/', async (req, res) => {
         res.status(400).json(err);
     }
 });
+
 // adminAuth
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
     try {
         const dogData = await Dog.destroy({
             where: {
