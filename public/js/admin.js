@@ -100,3 +100,40 @@ var loadFile = function (event) {
 
 
 
+const delDogButtonHandler = async (event) => {
+  if (event.target.hasAttribute('data-id')) {
+    const id = event.target.getAttribute('data-id');
+
+    const response = await fetch(`/api/dogs/${id}`, {
+      method: 'DELETE',
+    });
+
+    if (response.ok) {
+      document.location.replace('/profile');
+    } else {
+      alert('Failed to delete dog');
+    }
+  }
+};
+document
+  .querySelector('#deleteID')
+  .addEventListener('click', delDogButtonHandler);
+
+  const delCatButtonHandler = async (event) => {
+    if (event.target.hasAttribute('data-id')) {
+      const id = event.target.getAttribute('data-id');
+  
+      const response = await fetch(`/api/cats/${id}`, {
+        method: 'DELETE',
+      });
+  
+      if (response.ok) {
+        document.location.replace('/profile');
+      } else {
+        alert('Failed to delete cat');
+      }
+    }
+  };
+  document
+    .querySelector('#deleteID')
+    .addEventListener('click', delCatButtonHandler);

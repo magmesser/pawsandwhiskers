@@ -64,8 +64,8 @@
     </form>
   </div>
 
-
-  <section class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div id="deleteID">
+  <section class="grid grid-cols-1 md:grid-cols-3 gap-4" id="dogID">
     {{#each dogs as |dog|}}
     <div style="height: 410px; border: radius 25%;" class="card">
       <a style="text-decoration:none" href="/dogs/{{dog.id}}">
@@ -78,7 +78,7 @@
         </div>
       </a>
       <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
+        <button class="btn btn-sm btn-danger" data-id="{{dog.id}}">DELETE</button>
       </div>
     </div>
     {{/each}}
@@ -99,12 +99,12 @@
           </div>
       </a>
       <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
+        <button class="btn btn-sm btn-danger" data-id="{{cat.id}}">DELETE</button>
       </div>
     </div>
     {{/each}}
   </section>
-
+</div>
 
   <script src="./js/admin.js"></script>
   <script>

@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const { Cat } = require('../../models');
-const adminAuth = require('../../utils/auth');
+const { adminAuth, withAuth } = require('../../utils/auth');
+
 // adminAuth
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try {
         const newCat = await Cat.create({
             ...req.body,
@@ -16,7 +17,7 @@ router.post('/', async (req, res) => {
 });
 
 // adminAuth
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
     try {
         const catData = await Cat.destroy({
             where: {
