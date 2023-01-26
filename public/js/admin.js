@@ -91,14 +91,6 @@ document
     .querySelector('.new-cat-form')
     .addEventListener('submit', newCatForm);
 
-  
-
-//Script for image upload.
-var loadFile = function (event) {
-  image.src = URL.createObjectURL(event.target.files[0]);
-};
-
-
 
 const delDogButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
