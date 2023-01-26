@@ -101,15 +101,13 @@ const delDogButtonHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/profile');
+      document.location.replace('/admin');
+      console.log('Dog deleted');
     } else {
       alert('Failed to delete dog');
     }
   }
 };
-document
-  .querySelector('#deleteID')
-  .addEventListener('click', delDogButtonHandler);
 
   const delCatButtonHandler = async (event) => {
     if (event.target.hasAttribute('data-id')) {
@@ -120,12 +118,18 @@ document
       });
   
       if (response.ok) {
-        document.location.replace('/profile');
+        document.location.replace('/admin');
+        console.log('Cat deleted');
       } else {
         alert('Failed to delete cat');
       }
     }
   };
+  
   document
-    .querySelector('#deleteID')
+  .querySelector('#dogID')
+  .addEventListener('click', delDogButtonHandler);
+  
+  document
+    .querySelector('.catID')
     .addEventListener('click', delCatButtonHandler);

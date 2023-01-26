@@ -133,8 +133,10 @@
     </form>
   </div>
 
-<div id="deleteID">
-  <section class="grid grid-cols-1 md:grid-cols-3 gap-4" id="dogID">
+{{!-- Existing Pet View --}}
+<div id="dogID">
+  <h3 class="text-2xl p-2"> Available Pets:</h3>
+  <section class="grid grid-cols-1 md:grid-cols-3 gap-4 dogID">
 
     {{#each dogs as |dog|}}
     <div style="height: 410px; border: radius 25%;" class="card">
@@ -154,7 +156,7 @@
     {{/each}}
   </section>
 
-  <section class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4 mb-10">
+  <section class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4 mb-10 catID">
     {{#each cats as |cat|}}
 
     <div style="height: 410px; border: radius 25%;" class="card">
