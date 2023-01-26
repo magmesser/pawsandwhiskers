@@ -28,7 +28,7 @@ const newFormHandler = async (event) => {
     if (event.target.hasAttribute('data-id')) {
       const id = event.target.getAttribute('data-id');
   
-      const response = await fetch(`/api/projects/${id}`, {
+      const response = await fetch(`/api/dogs/${id}`, {
         method: 'DELETE',
       });
   
@@ -45,7 +45,7 @@ const newFormHandler = async (event) => {
     .addEventListener('submit', newFormHandler);
   
   document
-    .querySelector('.pet-list')
+    .querySelector('.btn-danger')
     .addEventListener('click', delButtonHandler);
 
 //Script for image upload.
