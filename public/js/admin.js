@@ -9,10 +9,10 @@ const newFormHandler = async (event) => {
   const gender = document.querySelector('#pet-gender').value.trim();
   const description = document.querySelector('#pet-desc').value.trim();
   const color = document.querySelector('#pet-color').value.trim();
-  
+
   const image = document.getElementById('output');
-  
-  
+
+
   if (name && breed && age && size && gender && description && color) {
     const response = await fetch(`/api/dogRoutes`, {
       method: 'POST',
@@ -38,14 +38,17 @@ const newFormHandler = async (event) => {
   }
 
 };
-  
-  document
-    .querySelector('.form new-pet-form p-2 m-2 rounded')
-    .addEventListener('submit', newFormHandler);
-  
-  
+
+document
+  .querySelector('.form new-pet-form p-2 m-2 rounded')
+  .addEventListener('submit', newFormHandler);
+
+
 
 //Script for image upload.
-    var loadFile = function(event) {
-        image.src=URL.createObjectURL(event.target.files[0]);
-    };    
+var loadFile = function (event) {
+  image.src = URL.createObjectURL(event.target.files[0]);
+};
+
+
+
