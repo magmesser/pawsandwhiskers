@@ -23,7 +23,7 @@ Dog.init(
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                isIn: [['male', 'female']],
+                isIn: [['Male', 'Female']],
                 },
             },
         color: {
@@ -40,12 +40,12 @@ Dog.init(
             },
         filename: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
             defaultValue: "coming-soon.jpg"
         },
         description: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
             defaultValue: "coming soon",
         }
     },
