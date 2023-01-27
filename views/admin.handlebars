@@ -18,7 +18,7 @@
       style="display:none;background-color: rgba(0, 0, 0, 0.2)">
       <div class="form-row">
         <div class="form-group col-md-6">
-          <label for="pet-name">Pet name:</label>
+          <label for="pet-name">Dog name:</label>
           <input class="form-control" type="text" id="pet-name" name="pet-name">
         </div>
 
@@ -29,7 +29,7 @@
 
         <div class="form-group col-md-3">
           <label for="pet-gender">Gender:</label>
-           <input class="form-control" list="genderlistOptions" id="pet-gender" placeholder="Search">
+           <input class="form-control" list="genderlistOptions" id="pet-gender" placeholder="M/F">
            <datalist id="genderlistOptions">
           <option value="Male">
           <option value="Female">
@@ -43,7 +43,7 @@
 
         <div class="form-group col-md-3">
            <label for="pet-size">Size:</label>
-          <input class="form-control" list="sizelistOptions" id="pet-size" placeholder="Search">
+          <input class="form-control" list="sizelistOptions" id="pet-size" placeholder="S/M/L">
         <datalist id="sizelistOptions">
           <option value="Small">
           <option value="Medium">
@@ -58,7 +58,7 @@
 
 
         <div class="form-group col-md-12">
-          <label for="pet-desc">Description:</label>
+          <label for="pet-desc">Photo Description:</label>
           <textarea class="form-control" id="pet-desc" name="pet-desc"></textarea>
         </div>
 
@@ -77,7 +77,7 @@
       style="display:none;background-color: rgba(0, 0, 0, 0.2)">
       <div class="form-row">
         <div class="form-group col-md-6">
-          <label for="pet-name">Pet name:</label>
+          <label for="pet-name">Cat name:</label>
           <input class="form-control" type="text" id="pet-name" name="pet-name">
         </div>
 
@@ -88,7 +88,7 @@
 
          <div class="form-group col-md-3">
           <label for="pet-gender">Gender:</label>
-           <input class="form-control" list="genderlistOptions" id="pet-gender" placeholder="Search">
+           <input class="form-control" list="genderlistOptions" id="pet-gender" placeholder="M/F">
            <datalist id="genderlistOptions">
           <option value="Male">
           <option value="Female">
@@ -102,7 +102,7 @@
 
         <div class="form-group col-md-3">
           <label for="pet-size">Size:</label>
-          <input class="form-control" list="sizelistOptions" id="pet-size" placeholder="Search">
+          <input class="form-control" list="sizelistOptions" id="pet-size" placeholder="S/M/L">
         <datalist id="sizelistOptions">
           <option value="Small">
           <option value="Medium">
@@ -117,7 +117,7 @@
 
 
         <div class="form-group col-md-12">
-          <label for="pet-desc">Description:</label>
+          <label for="pet-desc">Photo Description:</label>
           <textarea class="form-control" id="pet-desc" name="pet-desc"></textarea>
         </div>
 
@@ -129,11 +129,18 @@
         <div class="form-group col-md-1 bg-blue-500 rounded text-center m-2 center-item">
           <button type="submit" class="btn btn-primary">Create</button>
         </div>
+        
       </div>
     </form>
-  </div>
 
-<div id="deleteID">
+  </div>
+</div>
+
+{{!-- Existing Pet View --}}
+
+  <h3 class="text-2xl p-2"> Available Pets:</h3>
+
+{{!-- Existing Dogs --}}
   <section class="grid grid-cols-1 md:grid-cols-3 gap-4" id="dogID">
 
     {{#each dogs as |dog|}}
@@ -154,7 +161,8 @@
     {{/each}}
   </section>
 
-  <section class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4 mb-10">
+{{!-- Existing Cats --}}
+  <section class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4 mb-10" id="catID">
     {{#each cats as |cat|}}
 
     <div style="height: 410px; border: radius 25%;" class="card">
@@ -174,7 +182,7 @@
     </div>
     {{/each}}
   </section>
-</div>
+
 
   <script src="./js/admin.js"></script>
   <script>

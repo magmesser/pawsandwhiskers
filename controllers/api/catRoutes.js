@@ -3,7 +3,7 @@ const { Cat } = require('../../models');
 const { adminAuth, withAuth } = require('../../utils/auth');
 
 // adminAuth
-router.post('/', withAuth, async (req, res) => {
+router.post('/', async (req, res) => {
     try {
         const newCat = await Cat.create({
             ...req.body,
@@ -17,7 +17,7 @@ router.post('/', withAuth, async (req, res) => {
 });
 
 // adminAuth
-router.delete('/:id', withAuth, async (req, res) => {
+router.delete('/:id', async (req, res) => {
     try {
         const catData = await Cat.destroy({
             where: {

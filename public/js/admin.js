@@ -1,21 +1,19 @@
-
 const newDogForm = async (event) => {
   event.preventDefault();
 
-  const name = document.querySelector('#pet-name').value.trim();
-  const breed = document.querySelector('#pet-breed').value.trim();
-  const age = document.querySelector('#pet-age').value.trim();
-  const size = document.querySelector('#pet-size').value.trim();
-  const gender = document.querySelector('#pet-gender').value.trim();
-  const description = document.querySelector('#pet-desc').value.trim();
-  const color = document.querySelector('#pet-color').value.trim();
+  const name = document.querySelector("#pet-name").value.trim();
+  const breed = document.querySelector("#pet-breed").value.trim();
+  const age = document.querySelector("#pet-age").value.trim();
+  const size = document.querySelector("#pet-size").value.trim();
+  const gender = document.querySelector("#pet-gender").value.trim();
+  const description = document.querySelector("#pet-desc").value.trim();
+  const color = document.querySelector("#pet-color").value.trim();
 
-  const image = document.getElementById('output');
-
+  const image = document.getElementById("output");
 
   if (name && breed && age && size && gender && description && color) {
-    const response = await fetch(`/api/dogRoutes`, {
-      method: 'POST',
+    const response = await fetch(`/api/dogs`, {
+      method: "POST",
       body: JSON.stringify({
         name,
         breed,
@@ -26,44 +24,34 @@ const newDogForm = async (event) => {
         color,
       }),
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
     });
 
     if (response.ok) {
-      document.location.replace('/admin');
+      document.location.replace("/admin");
     } else {
-      alert('Failed to create listing');
+      alert("Failed to create dog listing");
     }
   }
-
 };
 
-document
-  .querySelector('.form new-pet-form p-2 m-2 rounded')
-  .addEventListener('submit', newFormHandler);
-
-
-    .querySelector('.new-dog-form')
-    .addEventListener('submit', newDogForm);
-
-  const newCatForm = async (event) => {
+const newCatForm = async (event) => {
   event.preventDefault();
 
-  const name = document.querySelector('#pet-name').value.trim();
-  const breed = document.querySelector('#pet-breed').value.trim();
-  const age = document.querySelector('#pet-age').value.trim();
-  const size = document.querySelector('#pet-size').value.trim();
-  const gender = document.querySelector('#pet-gender').value.trim();
-  const description = document.querySelector('#pet-desc').value.trim();
-  const color = document.querySelector('#pet-color').value.trim();
-  
-  const image = document.getElementById('output');
-  
-  
+  const name = document.querySelector("#pet-name").value.trim();
+  const breed = document.querySelector("#pet-breed").value.trim();
+  const age = document.querySelector("#pet-age").value.trim();
+  const size = document.querySelector("#pet-size").value.trim();
+  const gender = document.querySelector("#pet-gender").value.trim();
+  const description = document.querySelector("#pet-desc").value.trim();
+  const color = document.querySelector("#pet-color").value.trim();
+
+  const image = document.getElementById("output");
+
   if (name && breed && age && size && gender && description && color) {
-    const response = await fetch(`/api/catRoutes`, {
-      method: 'POST',
+    const response = await fetch(`/api/cats`, {
+      method: "POST",
       body: JSON.stringify({
         name,
         breed,
@@ -74,58 +62,58 @@ document
         color,
       }),
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
     });
 
     if (response.ok) {
-      document.location.replace('/admin');
+      document.location.replace("/admin");
     } else {
-      alert('Failed to create listing');
-    }
-  }
-
-};  
-  
-document
-    .querySelector('.new-cat-form')
-    .addEventListener('submit', newCatForm);
-
-
-const delDogButtonHandler = async (event) => {
-  if (event.target.hasAttribute('data-id')) {
-    const id = event.target.getAttribute('data-id');
-
-    const response = await fetch(`/api/dogs/${id}`, {
-      method: 'DELETE',
-    });
-
-    if (response.ok) {
-      document.location.replace('/profile');
-    } else {
-      alert('Failed to delete dog');
+      alert("Failed to create cat listing");
     }
   }
 };
-document
-  .querySelector('#deleteID')
-  .addEventListener('click', delDogButtonHandler);
 
-  const delCatButtonHandler = async (event) => {
-    if (event.target.hasAttribute('data-id')) {
-      const id = event.target.getAttribute('data-id');
-  
-      const response = await fetch(`/api/cats/${id}`, {
-        method: 'DELETE',
-      });
-  
-      if (response.ok) {
-        document.location.replace('/profile');
-      } else {
-        alert('Failed to delete cat');
-      }
+document.querySelector(".new-dog-form").addEventListener("submit", newDogForm);
+
+document.querySelector(".new-cat-form").addEventListener("submit", newCatForm);
+
+// Delete form handlers and event listeners 
+
+const delDogButtonHandler = async (event) => {
+  if (event.target.hasAttribute("data-id")) {
+    const id = event.target.getAttribute("data-id");
+
+    const response = await fetch(`/api/dogs/${id}`, {
+      method: "DELETE",
+    });
+
+    if (response.ok) {
+      document.location.replace("/admin");
+      console.log("Dog deleted");
+    } else {
+      alert("Failed to delete dog");
     }
-  };
-  document
-    .querySelector('#deleteID')
-    .addEventListener('click', delCatButtonHandler);
+  }
+};
+
+const delCatButtonHandler = async (event) => {
+  if (event.target.hasAttribute("data-id")) {
+    const id = event.target.getAttribute("data-id");
+
+    const response = await fetch(`/api/cats/${id}`, {
+      method: "DELETE",
+    });
+
+    if (response.ok) {
+      document.location.replace("/admin");
+      console.log("Cat deleted");
+    } else {
+      alert("Failed to delete cat");
+    }
+  }
+};
+
+document.querySelector("#dogID").addEventListener("click", delDogButtonHandler);
+
+document.querySelector("#catID").addEventListener("click", delCatButtonHandler);
