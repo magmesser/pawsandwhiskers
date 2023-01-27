@@ -13,7 +13,7 @@
 
     <button onclick="renderCatForm()" id='new-cat-button'
       class="col-md-3 bg-blue-500 rounded text-center m-2 center-item">Add New Cat</button>
-
+{{!-- dog form --}}
     <form id='new-dog-form' class="form new-dog-form p-2 m-2 rounded"
       style="display:none;background-color: rgba(0, 0, 0, 0.2)">
       <div class="form-row">
@@ -72,23 +72,23 @@
         </div>
       </div>
     </form>
-
+{{!-- cat form --}}
     <form id='new-cat-form' class="form new-cat-form p-2 m-2 rounded"
       style="display:none;background-color: rgba(0, 0, 0, 0.2)">
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="pet-name">Cat name:</label>
-          <input class="form-control" type="text" id="pet-name" name="pet-name">
+          <input class="form-control" type="text" id="cat-name" name="pet-name">
         </div>
 
         <div class="form-group col-md-6">
           <label for="pet-breed">Breed:</label>
-          <input class="form-control" type="text" id="pet-breed" name="pet-breed" />
+          <input class="form-control" type="text" id="cat-breed" name="pet-breed" />
         </div>
 
          <div class="form-group col-md-3">
           <label for="pet-gender">Gender:</label>
-           <input class="form-control" list="genderlistOptions" id="pet-gender" placeholder="M/F">
+           <input class="form-control" list="genderlistOptions" id="cat-gender" placeholder="M/F">
            <datalist id="genderlistOptions">
           <option value="Male">
           <option value="Female">
@@ -97,12 +97,12 @@
 
         <div class="form-group col-md-3">
           <label for="pet-color">Color:</label>
-          <textarea class="form-control" id="pet-color" name="pet-color"></textarea>
+          <textarea class="form-control" id="cat-color" name="pet-color"></textarea>
         </div>
 
         <div class="form-group col-md-3">
           <label for="pet-size">Size:</label>
-          <input class="form-control" list="sizelistOptions" id="pet-size" placeholder="S/M/L">
+          <input class="form-control" list="sizelistOptions" id="cat-size" placeholder="S/M/L">
         <datalist id="sizelistOptions">
           <option value="Small">
           <option value="Medium">
@@ -112,18 +112,18 @@
 
         <div class="form-group col-md-3">
           <label for="pet-age">Age:</label>
-          <input class="form-control" type="number" id="pet-age" name="pet-age">
+          <input class="form-control" type="number" id="cat-age" name="pet-age">
         </div>
 
 
         <div class="form-group col-md-12">
           <label for="pet-desc">Photo Description:</label>
-          <textarea class="form-control" id="pet-desc" name="pet-desc"></textarea>
+          <textarea class="form-control" id="cat-desc" name="cat-desc"></textarea>
         </div>
 
         <div class="form-group col-md-12">
           <input type="file" accept="image/*" onchange="loadFile(event)">
-          <p><img id="output" width="200" /></p>
+          <p><img id="output-cat" width="200" /></p>
         </div>
 
         <div class="form-group col-md-1 bg-blue-500 rounded text-center m-2 center-item">
@@ -155,7 +155,7 @@
         </div>
       </a>
       <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{dog.id}}">DELETE</button>
+        <button class="btn btn-sm btn-danger dogDelete" data-id="{{dog.id}}">DELETE</button>
       </div>
     </div>
     {{/each}}
