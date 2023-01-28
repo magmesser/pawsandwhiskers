@@ -9,13 +9,14 @@
     <h3 class="text-2xl p-2">Post New Pet:</h3>
 
     <button onclick="renderDogForm();" id='new-dog-button'
-      class="col-md-3 bg-blue-500 rounded text-center m-2 center-item">Add New Dog</button>
+      class="col-md-3 bg-blue-500 rounded text-center m-2 center-item" style="color: white;">Add New Dog</button>
 
     <button onclick="renderCatForm();" id='new-cat-button'
-      class="col-md-3 bg-blue-500 rounded text-center m-2 center-item">Add New Cat</button>
+      class="col-md-3 bg-blue-500 rounded text-center m-2 center-item" style="color: white;">Add New Cat</button>
     {{!-- dog form --}}
     <form id='new-dog-form' class="form new-dog-form p-2 m-2 rounded"
       style="display:none;background-color: rgba(0, 0, 0, 0.2)">
+
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="pet-name">Dog name:</label>
@@ -207,16 +208,21 @@
 <script src="./js/admin.js"></script>
 <script>
   function renderDogForm(){
-    if (document.getElementById('new-dog-form').style.display = 'none') {
-      document.getElementById("new-dog-form").style.display = '';
+    var x = document.getElementById('new-dog-form');
+    if (x.style.display === "none") {
+    x.style.display = "block";
     } else {
-      document.setAttribute('new-dog-form').style.display = 'none'
+    x.style.display = "none";
     }
   }
 </script>
 <script>
   function renderCatForm() {
-
-    document.getElementById("new-cat-form").style.display = '';
+    var x = document.getElementById('new-cat-form');
+    if (x.style.display === "none") {
+    x.style.display = "block";
+    } else {
+    x.style.display = "none";
+    }
   }
 </script>
