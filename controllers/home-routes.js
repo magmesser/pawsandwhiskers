@@ -2,6 +2,7 @@ const router = require("express").Router();
 const { Dog, Cat, User } = require("../models");
 // const withAuth = require('../utils/auth'); withAuth not required on routes at this time
 
+// Homepage - Login or sign up
 router.get("/", async (req, res) => {
   try {
     res.render("homepage", {});
@@ -28,8 +29,9 @@ router.get("/pets", async (req, res) => {
     const cats = catData.map((cat) => cat.get({ plain: true }));
 
     res.render("pets", {
-      dogs, cats,
-      logged_in: true
+      dogs,
+      cats,
+      logged_in: true,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -44,7 +46,7 @@ router.get("/dogs", async (req, res) => {
 
     res.render("pets", {
       dogs,
-      logged_in: true
+      logged_in: true,
     });
   } catch (err) {
     console.log(err);
@@ -54,19 +56,20 @@ router.get("/dogs", async (req, res) => {
 
 // GET dog by id/image link
 router.get("/dogs/:id", async (req, res) => {
-    try {
-      const dogData = await Dog.findByPk(req.params.id);
-  
-      const dog = dogData.get({ plain: true });
-  
-      res.render('single-dog', { 
-        ...dog,
-        logged_in: req.session.logged_ing });
-    } catch (err) {
-      console.log(err);
-      res.status(500).json(err);
-    }
-  });
+  try {
+    const dogData = await Dog.findByPk(req.params.id);
+
+    const dog = dogData.get({ plain: true });
+
+    res.render("single-dog", {
+      ...dog,
+      logged_in: req.session.logged_ing,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 
 // GET all dogs nav link
 router.get("/cats", async (req, res) => {
@@ -76,7 +79,7 @@ router.get("/cats", async (req, res) => {
 
     res.render("pets", {
       cats,
-      logged_in: true
+      logged_in: true,
     });
   } catch (err) {
     console.log(err);
@@ -91,9 +94,10 @@ router.get("/cats/:id", async (req, res) => {
 
     const cat = catData.get({ plain: true });
 
-    res.render('single-cat', { 
+    res.render("single-cat", {
       ...cat,
-      logged_in: req.session.logged_ing });
+      logged_in: req.session.logged_ing,
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -109,8 +113,9 @@ router.get("/admin", async (req, res) => {
     const cats = catData.map((cat) => cat.get({ plain: true }));
 
     res.render("admin", {
-      dogs, cats,
-      logged_in: true
+      dogs,
+      cats,
+      logged_in: true,
     });
   } catch (err) {
     res.status(500).json(err);

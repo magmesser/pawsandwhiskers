@@ -1,6 +1,8 @@
+// Create form handlers and event listeners
+// Create New Dog Form
 const newDogForm = async (event) => {
   event.preventDefault();
-  console.log('adding new dog')
+  console.log("adding new dog");
 
   const name = document.querySelector("#dog-name").value.trim();
   const breed = document.querySelector("#dog-breed").value.trim();
@@ -10,11 +12,13 @@ const newDogForm = async (event) => {
   const description = document.querySelector("#dog-desc").value.trim();
   const color = document.querySelector("#dog-color").value.trim();
 
-  console.log(`${name} - ${breed} - ${age} - ${size} - ${gender} - ${description} - ${color}`);
+  console.log(
+    `${name} - ${breed} - ${age} - ${size} - ${gender} - ${description} - ${color}`
+  );
   const image = document.getElementById("output");
 
   if (name && breed && age && size && gender && description && color) {
-    console.log('testing dog form')
+    console.log("testing dog form");
     const response = await fetch(`/api/dogs`, {
       method: "POST",
       body: JSON.stringify({
@@ -33,16 +37,17 @@ const newDogForm = async (event) => {
 
     if (response.ok) {
       document.location.replace("/admin");
-      alert('New dog created!')
+      alert("New dog created!");
     } else {
       alert("Failed to create dog listing");
     }
   }
 };
 
+// Create New Cat Form
 const newCatForm = async (event) => {
   event.preventDefault();
-  console.log("adding new cat")
+  console.log("adding new cat");
 
   const name = document.querySelector("#cat-name").value.trim();
   const breed = document.querySelector("#cat-breed").value.trim();
@@ -51,12 +56,14 @@ const newCatForm = async (event) => {
   const gender = document.querySelector("#cat-gender").value.trim();
   const description = document.querySelector("#cat-desc").value.trim();
   const color = document.querySelector("#cat-color").value.trim();
-  
-  console.log(`${name} - ${breed} - ${age} - ${size} - ${gender} - ${description} - ${color}`);
+
+  console.log(
+    `${name} - ${breed} - ${age} - ${size} - ${gender} - ${description} - ${color}`
+  );
   const image = document.getElementById("output-cat");
 
   if (name && breed && age && size && gender && description && color) {
-      console.log('testing cat form')
+    console.log("testing cat form");
     const response = await fetch(`/api/cats`, {
       method: "POST",
       body: JSON.stringify({
@@ -75,7 +82,7 @@ const newCatForm = async (event) => {
 
     if (response.ok) {
       document.location.replace("/admin");
-      alert('New cat created!')
+      alert("New cat created!");
     } else {
       alert("Failed to create cat listing");
     }
@@ -86,8 +93,8 @@ document.querySelector("#new-dog-form").addEventListener("submit", newDogForm);
 
 document.querySelector("#new-cat-form").addEventListener("submit", newCatForm);
 
-// Delete form handlers and event listeners 
-
+// Delete form handlers and event listeners
+// Delete Dog 
 const delDogButtonHandler = async (event) => {
   if (event.target.hasAttribute("dog-data-id")) {
     const id = event.target.getAttribute("dog-data-id");
@@ -105,6 +112,7 @@ const delDogButtonHandler = async (event) => {
   }
 };
 
+// Delete Cat
 const delCatButtonHandler = async (event) => {
   if (event.target.hasAttribute("cat-data-id")) {
     const id = event.target.getAttribute("cat-data-id");
@@ -122,11 +130,6 @@ const delCatButtonHandler = async (event) => {
   }
 };
 
-// const dogDelete = document.querySelectorAll(".dogDelete");
-// for (let i = 0; i < dogDelete.length; i++) {
-// dogDelete[i].addEventListener("click", delDogButtonHandler)};
-
 document.querySelector("#dogID").addEventListener("click", delDogButtonHandler);
 
 document.querySelector("#catID").addEventListener("click", delCatButtonHandler);
-
