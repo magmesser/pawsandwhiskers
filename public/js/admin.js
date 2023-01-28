@@ -38,18 +38,21 @@ const newDogForm = async (event) => {
 
 const newCatForm = async (event) => {
   event.preventDefault();
+  console.log("adding new cat")
 
-  const name = document.querySelector("#pet-name").value.trim();
-  const breed = document.querySelector("#pet-breed").value.trim();
-  const age = document.querySelector("#pet-age").value.trim();
-  const size = document.querySelector("#pet-size").value.trim();
-  const gender = document.querySelector("#pet-gender").value.trim();
-  const description = document.querySelector("#pet-desc").value.trim();
-  const color = document.querySelector("#pet-color").value.trim();
-
-  const image = document.getElementById("output");
+  const name = document.querySelector("#cat-name").value.trim();
+  const breed = document.querySelector("#cat-breed").value.trim();
+  const age = document.querySelector("#cat-age").value.trim();
+  const size = document.querySelector("#cat-size").value.trim();
+  const gender = document.querySelector("#cat-gender").value.trim();
+  const description = document.querySelector("#cat-desc").value.trim();
+  const color = document.querySelector("#cat-color").value.trim();
+  
+  console.log(`${name} - ${breed} - ${age} - ${size} - ${gender} - ${description} - ${color}`);
+  const image = document.getElementById("output-cat");
 
   if (name && breed && age && size && gender && description && color) {
+      console.log('testing cat form')
     const response = await fetch(`/api/cats`, {
       method: "POST",
       body: JSON.stringify({
@@ -76,7 +79,7 @@ const newCatForm = async (event) => {
 
 document.querySelector(".new-dog-form").addEventListener("submit", newDogForm);
 
-document.querySelector(".new-cat-form").addEventListener("submit", newCatForm);
+document.querySelector("#new-cat-form").addEventListener("submit", newCatForm);
 
 // Delete form handlers and event listeners 
 
@@ -114,6 +117,8 @@ const delCatButtonHandler = async (event) => {
   }
 };
 
-document.querySelector("#dogID").addEventListener("click", delDogButtonHandler);
+const dogDelete = document.querySelectorAll(".dogDelete");
+for (let i = 0; i < dogDelete.length; i++) {
+dogDelete[i].addEventListener("click", delDogButtonHandler)};
 
 document.querySelector("#catID").addEventListener("click", delCatButtonHandler);
