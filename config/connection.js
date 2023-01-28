@@ -5,11 +5,9 @@ let sequelize;
 
 if(process.env.JAWSDB_URL) {
     // the application is executed on Heroku ... use the postgres database
-    sequelize = new Sequelize(process.env.JAWSDB_URL, {
-        dialect:  'postgres',
-        protocol: 'postgres',
-        logging:  true //false
-      });
+    sequelize = new Sequelize(process.env.JAWSDB_URL, 'postgres', '', {
+        dialect: 'postgres'
+    });
 } else {
     sequelize = new Sequelize(
         process.env.DB_NAME,
