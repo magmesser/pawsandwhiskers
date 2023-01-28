@@ -8,58 +8,67 @@
   <div class="col-md-12">
     <h3 class="text-2xl p-2">Post New Pet:</h3>
 
-    <button onclick="renderDogForm()" id='new-dog-button'
+    <button onclick="renderDogForm();" id='new-dog-button'
       class="col-md-3 bg-blue-500 rounded text-center m-2 center-item">Add New Dog</button>
 
-    <button onclick="renderCatForm()" id='new-cat-button'
+    <button onclick="renderCatForm();" id='new-cat-button'
       class="col-md-3 bg-blue-500 rounded text-center m-2 center-item">Add New Cat</button>
-{{!-- dog form --}}
+    {{!-- dog form --}}
     <form id='new-dog-form' class="form new-dog-form p-2 m-2 rounded"
       style="display:none;background-color: rgba(0, 0, 0, 0.2)">
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="pet-name">Dog name:</label>
-          <input class="form-control" type="text" id="pet-name" name="pet-name">
+          <input class="form-control" type="text" id="dog-name" name="pet-name" required>
         </div>
 
         <div class="form-group col-md-6">
           <label for="pet-breed">Breed:</label>
-          <input class="form-control" type="text" id="pet-breed" name="pet-breed" />
+          <input class="form-control" type="text" id="dog-breed" name="pet-breed" required />
         </div>
 
         <div class="form-group col-md-3">
           <label for="pet-gender">Gender:</label>
-           <input class="form-control" list="genderlistOptions" id="pet-gender" placeholder="M/F">
-           <datalist id="genderlistOptions">
-          <option value="Male">
-          <option value="Female">
+          <input class="form-control" list="genderlistOptions" id="dog-gender" placeholder="M/F" required>
+          <datalist id="genderlistOptions">
+            <option value="Male">
+            <option value="Female">
           </datalist>
         </div>
 
         <div class="form-group col-md-3">
           <label for="pet-color">Color:</label>
-          <textarea class="form-control" id="pet-color" name="pet-color"></textarea>
+          <input class="form-control" list="colorlistOptions" id="dog-color" name="dog-color" required />
+          <datalist id="colorlistOptions">
+            <option value="Black">
+            <option value="Tan">
+            <option value="White">
+            <option value="Spotted">
+            <option value="Grey">
+            <option value="Brown">
+            <option value="Other">
+          </datalist>
         </div>
 
         <div class="form-group col-md-3">
-           <label for="pet-size">Size:</label>
-          <input class="form-control" list="sizelistOptions" id="pet-size" placeholder="S/M/L">
-        <datalist id="sizelistOptions">
-          <option value="Small">
-          <option value="Medium">
-          <option value="Large">
-        </datalist>
+          <label for="pet-size">Size:</label>
+          <input class="form-control" list="sizelistOptions" id="dog-size" placeholder="S/M/L" required>
+          <datalist id="sizelistOptions">
+            <option value="Small">
+            <option value="Medium">
+            <option value="Large">
+          </datalist>
         </div>
 
-       <div class="form-group col-md-3">
+        <div class="form-group col-md-3">
           <label for="pet-age">Age:</label>
-          <input class="form-control" type="number" id="pet-age" name="pet-age">
+          <input class="form-control" type="number" min="0" id="dog-age" name="pet-age" required>
         </div>
 
 
         <div class="form-group col-md-12">
           <label for="pet-desc">Photo Description:</label>
-          <textarea class="form-control" id="pet-desc" name="pet-desc"></textarea>
+          <textarea class="form-control" id="dog-desc" name="pet-desc" required></textarea>
         </div>
 
         <div class="form-group col-md-12">
@@ -72,53 +81,62 @@
         </div>
       </div>
     </form>
-{{!-- cat form --}}
+    {{!-- cat form --}}
     <form id='new-cat-form' class="form new-cat-form p-2 m-2 rounded"
       style="display:none;background-color: rgba(0, 0, 0, 0.2)">
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="pet-name">Cat name:</label>
-          <input class="form-control" type="text" id="cat-name" name="pet-name">
+          <input class="form-control" type="text" id="cat-name" name="pet-name" required>
         </div>
 
         <div class="form-group col-md-6">
           <label for="pet-breed">Breed:</label>
-          <input class="form-control" type="text" id="cat-breed" name="pet-breed" />
+          <input class="form-control" type="text" id="cat-breed" name="pet-breed" required />
         </div>
 
-         <div class="form-group col-md-3">
+        <div class="form-group col-md-3">
           <label for="pet-gender">Gender:</label>
-           <input class="form-control" list="genderlistOptions" id="cat-gender" placeholder="M/F">
-           <datalist id="genderlistOptions">
-          <option value="Male">
-          <option value="Female">
+          <input class="form-control" list="genderlistOptions" id="cat-gender" placeholder="M/F" required>
+          <datalist id="genderlistOptions">
+            <option value="Male">
+            <option value="Female">
           </datalist>
         </div>
 
         <div class="form-group col-md-3">
           <label for="pet-color">Color:</label>
-          <textarea class="form-control" id="cat-color" name="pet-color"></textarea>
+          <input class="form-control" list="colorlistOptions" id="cat-color" name="pet-color" required>
+          <datalist id="colorlistOptions">
+            <option value="Black">
+            <option value="Orange">
+            <option value="White">
+            <option value="Spotted">
+            <option value="Grey">
+            <option value="Brown">
+            <option value="Other">
+          </datalist>
         </div>
 
         <div class="form-group col-md-3">
           <label for="pet-size">Size:</label>
-          <input class="form-control" list="sizelistOptions" id="cat-size" placeholder="S/M/L">
-        <datalist id="sizelistOptions">
-          <option value="Small">
-          <option value="Medium">
-          <option value="Large">
-        </datalist>
+          <input class="form-control" list="sizelistOptions" id="cat-size" placeholder="S/M/L" required>
+          <datalist id="sizelistOptions">
+            <option value="Small">
+            <option value="Medium">
+            <option value="Large">
+          </datalist>
         </div>
 
         <div class="form-group col-md-3">
           <label for="pet-age">Age:</label>
-          <input class="form-control" type="number" id="cat-age" name="pet-age">
+          <input class="form-control" type="number" min="0" id="cat-age" name="pet-age" required>
         </div>
 
 
         <div class="form-group col-md-12">
           <label for="pet-desc">Photo Description:</label>
-          <textarea class="form-control" id="cat-desc" name="cat-desc"></textarea>
+          <textarea class="form-control" id="cat-desc" name="cat-desc" required></textarea>
         </div>
 
         <div class="form-group col-md-12">
@@ -129,7 +147,7 @@
         <div class="form-group col-md-1 bg-blue-500 rounded text-center m-2 center-item">
           <button type="submit" class="btn btn-primary">Create</button>
         </div>
-        
+
       </div>
     </form>
 
@@ -138,62 +156,67 @@
 
 {{!-- Existing Pet View --}}
 
-  <h3 class="text-2xl p-2"> Available Pets:</h3>
+<h3 class="text-2xl p-2"> Available Pets:</h3>
 
 {{!-- Existing Dogs --}}
-  <section class="grid grid-cols-1 md:grid-cols-3 gap-4" id="dogID">
+<section class="grid grid-cols-1 md:grid-cols-3 gap-4" id="dogID">
 
-    {{#each dogs as |dog|}}
-    <div style="height: 410px; border: radius 25%;" class="card">
-      <a style="text-decoration:none" href="/dogs/{{dog.id}}">
+  {{#each dogs as |dog|}}
+  <div style="height: 410px; border: radius 25%;" class="card">
+    <a style="text-decoration:none" href="/dogs/{{dog.id}}">
 
-        <p class="text-center text-2xl hover:font-bold" style="font-family: 'Amatic SC', cursive; font-size: 2.0em">{{dog.name}}</p>
-        <div class="card-body grid place-items-center">
-          <img style="height:250px" src="/images/dogs/{{dog.filename}}" alt="{{dog.description}}" />
-          <p>{{dog.name}} is a {{dog.age}} year old, {{dog.size}} sized, {{dog.gender}} {{dog.breed}} with {{dog.color}}
-            fur.</p>
-        </div>
-      </a>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger dogDelete" data-id="{{dog.id}}">DELETE</button>
+      <p class="text-center text-2xl hover:font-bold" style="font-family: 'Amatic SC', cursive; font-size: 2.0em">
+        {{dog.name}}</p>
+      <div class="card-body grid place-items-center">
+        <img style="height:250px" src="/images/dogs/{{dog.filename}}" alt="{{dog.description}}" />
+        <p>{{dog.name}} is a {{dog.age}} year old, {{dog.size}} sized, {{dog.gender}} {{dog.breed}} with {{dog.color}}
+          fur.</p>
       </div>
+    </a>
+    <div class="col-md-4">
+      <button class="btn btn-sm btn-danger" dog-data-id="{{dog.id}}">DELETE</button>
     </div>
-    {{/each}}
-  </section>
+  </div>
+  {{/each}}
+</section>
 
 {{!-- Existing Cats --}}
-  <section class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4 mb-10" id="catID">
-    {{#each cats as |cat|}}
+<section class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4 mb-10" id="catID">
+  {{#each cats as |cat|}}
 
-    <div style="height: 410px; border: radius 25%;" class="card">
-      <a style="text-decoration:none" href="/cats/{{cat.id}}">
+  <div style="height: 410px; border: radius 25%;" class="card">
+    <a style="text-decoration:none" href="/cats/{{cat.id}}">
 
-        <p class="text-center text-2xl hover:font-bold" style="font-family: 'Amatic SC', cursive; font-size: 2.0em">{{cat.name}}</h2>
-          <div class="card-body grid place-items-center	">
-            <img style="height:250px" src="/images/cats/{{cat.filename}}" alt="{{cat.description}}" />
-            <p>{{cat.name}} is a {{cat.age}} year old, {{cat.size}} sized, {{cat.gender}} {{cat.breed}} with
-              {{cat.color}}
-              fur.</p>
-          </div>
-      </a>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{cat.id}}">DELETE</button>
-      </div>
+      <p class="text-center text-2xl hover:font-bold" style="font-family: 'Amatic SC', cursive; font-size: 2.0em">
+        {{cat.name}}</h2>
+        <div class="card-body grid place-items-center	">
+          <img style="height:250px" src="/images/cats/{{cat.filename}}" alt="{{cat.description}}" />
+          <p>{{cat.name}} is a {{cat.age}} year old, {{cat.size}} sized, {{cat.gender}} {{cat.breed}} with
+            {{cat.color}}
+            fur.</p>
+        </div>
+    </a>
+    <div class="col-md-4">
+      <button class="btn btn-sm btn-danger" cat-data-id="{{cat.id}}">DELETE</button>
     </div>
-    {{/each}}
-  </section>
+  </div>
+  {{/each}}
+</section>
 
 
-  <script src="./js/admin.js"></script>
-  <script>
-    function renderDogForm() {
-
+<script src="./js/admin.js"></script>
+<script>
+  function renderDogForm(){
+    if (document.getElementById('new-dog-form').style.display = 'none') {
       document.getElementById("new-dog-form").style.display = '';
+    } else {
+      document.setAttribute('new-dog-form').style.display = 'none'
     }
-  </script>
-  <script>
-    function renderCatForm() {
+  }
+</script>
+<script>
+  function renderCatForm() {
 
-      document.getElementById("new-cat-form").style.display = '';
-    }
-  </script>
+    document.getElementById("new-cat-form").style.display = '';
+  }
+</script>
