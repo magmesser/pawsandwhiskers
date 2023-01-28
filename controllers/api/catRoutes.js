@@ -22,7 +22,6 @@ router.delete('/:id', async (req, res) => {
         const catData = await Cat.destroy({
             where: {
                 id: req.params.id,
-                user_id: req.session.user_id,
             },
         });
 
