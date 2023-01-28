@@ -8,12 +8,13 @@
   <div class="col-md-12">
     <h3 class="text-2xl p-2">Post New Pet:</h3>
 
+{{!-- Show/Hide forms buttons --}}
     <button onclick="renderDogForm();" id='new-dog-button'
       class="col-md-3 bg-blue-500 rounded text-center m-2 center-item" style="color: white;">Add New Dog</button>
 
     <button onclick="renderCatForm();" id='new-cat-button'
       class="col-md-3 bg-blue-500 rounded text-center m-2 center-item" style="color: white;">Add New Cat</button>
-    {{!-- dog form --}}
+    {{!-- Dog Form --}}
     <form id='new-dog-form' class="form new-dog-form p-2 m-2 rounded"
       style="display:none;background-color: rgba(0, 0, 0, 0.2)">
 
@@ -82,7 +83,8 @@
         </div>
       </div>
     </form>
-    {{!-- cat form --}}
+    
+    {{!-- Cat Form --}}
     <form id='new-cat-form' class="form new-cat-form p-2 m-2 rounded"
       style="display:none;background-color: rgba(0, 0, 0, 0.2)">
       <div class="form-row">

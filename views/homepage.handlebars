@@ -1,51 +1,63 @@
+{{! Homepage }}
+<section class="login-signup ml-20 mr-20">
+  <div class="message">
+    <h2 class="text-2xl">Please login or sign up to see our available pets.</h2>
+  </div>
+  {{! Login Form }}
+  <div class="d-flex justify-content-center">
+    <div
+      class="col-md-6 rounded"
+      style="margin: 5px; padding: 5px; background-color: lightgrey"
+    >
+      <h3 class="text-xl p-1 m-1">Login:</h3>
 
-  <section class="login-signup ml-20 mr-20">
-    <div class="message">
-      <h2 class='text-2xl'>Please login or sign up to see our available pets.</h2>
+      <form class="form login-form">
+        <div class="form-outline mb-2">
+          <label for="email-login">Email address</label>
+          <input class="form-control" type="email" id="email-login" />
+        </div>
+        <div class="form-outline mb-2">
+          <label for="password-login">Password:</label>
+          <input class="form-control" type="password" id="password-login" />
+        </div>
+        <div class="form-group">
+          <button
+            class="btn btn-primary btn-block mb-4 bg-blue-500 rounded"
+            type="submit"
+          >Sign in</button>
+        </div>
+      </form>
     </div>
 
-    <div class="d-flex justify-content-center">
-      <div class="col-md-6 rounded"style="margin: 5px; padding: 5px; background-color: lightgrey">
-        <h3 class="text-xl p-1 m-1">Login:</h3>
-
-        <form class="form login-form">
-          <div class="form-outline mb-2">
-            <label for="email-login">Email address</label>
-            <input class="form-control" type="email" id="email-login" />
-          </div>
-          <div class="form-outline mb-2">
-            <label for="password-login">Password:</label>
-            <input class="form-control" type="password" id="password-login" />
-          </div>
-          <div class="form-group">
-            <button class="btn btn-primary btn-block mb-4 bg-blue-500 rounded" type="submit">Sign in</button>
-          </div>
-        </form>
-      </div>
-
-
-      <div class="col-md-6 rounded"style="margin: 5px; padding: 5px; background-color: lightgrey">
-        <h3 class="text-xl p-1 m-1">Sign Up:</h3>
-        <form class="form signup-form">
-          <div class="form-outline mb-4">
-            <label for="name-signup">Username:</label>
-            <input class="form-control" type="text" id="name-signup" />
-          </div>
-          <div class="form-outline mb-4">
-            <label for="email-signup">Email address:</label>
-            <input class="form-control" type="email" id="email-signup" />
-          </div>
-          <div class="form-outline mb-4">
-            <label for="password-signup">Password:</label>
-            <input class="form-control" type="password" id="password-signup" />
-          </div>
-          <div class="form-group">
-            <button class="btn btn-primary btn-block mb-4 bg-blue-500 rounded" type="submit">Sign Up</button>
-          </div>
-        </form>
-      </div>
-      
+    {{! Signup Form }}
+    <div
+      class="col-md-6 rounded"
+      style="margin: 5px; padding: 5px; background-color: lightgrey"
+    >
+      <h3 class="text-xl p-1 m-1">Sign Up:</h3>
+      <form class="form signup-form">
+        <div class="form-outline mb-4">
+          <label for="name-signup">Username:</label>
+          <input class="form-control" type="text" id="name-signup" />
+        </div>
+        <div class="form-outline mb-4">
+          <label for="email-signup">Email address:</label>
+          <input class="form-control" type="email" id="email-signup" />
+        </div>
+        <div class="form-outline mb-4">
+          <label for="password-signup">Password:</label>
+          <input class="form-control" type="password" id="password-signup" />
+        </div>
+        <div class="form-group">
+          <button
+            class="btn btn-primary btn-block mb-4 bg-blue-500 rounded"
+            type="submit"
+          >Sign Up</button>
+        </div>
+      </form>
     </div>
-  </section>
 
-  <script src="./js/login.js"></script>
+  </div>
+</section>
+
+<script src="./js/login.js"></script>
