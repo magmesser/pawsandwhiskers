@@ -4,7 +4,10 @@ require('dotenv').config();
 let sequelize;
 
 if(process.env.JAWSDB_URL) {
-    sequelize = new Sequelize(process.env.JAWSDB_URL);
+    // the application is executed on Heroku ... use the postgres database
+    sequelize = new Sequelize(process.env.JAWSDB_URL, 'postgres', '', {
+        dialect: 'postgres'
+    });
 } else {
     sequelize = new Sequelize(
         process.env.DB_NAME,
