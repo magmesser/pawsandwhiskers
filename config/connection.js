@@ -4,18 +4,15 @@ require('dotenv').config();
 let sequelize;
 
 if(process.env.JAWSDB_URL) {
-    // the application is executed on Heroku ... use the postgres database
-    sequelize = new Sequelize(process.env.JAWSDB_URL, 'postgres', '', {
-        dialect: 'postgres'
-    });
+    sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {
     sequelize = new Sequelize(
         process.env.DB_NAME,
         process.env.DB_USER,
         process.env.DB_PASSWORD,
         {
-            // host: 'localhost',
-            host: '127.0.0.1', //for Maggie only
+            host: 'localhost',
+//             host: '127.0.0.1', //for Maggie only
             dialect: 'mysql',
             port: 3306
         }
