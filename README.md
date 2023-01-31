@@ -10,9 +10,10 @@
   Our team can offer your nonprofit organization a clean looking website that showcases the dogs or cats you have up for adoption. Your clients will be able to get the information they need on your available pets as well as see a picture of their newest furry friend. Your staff will easily be able to add new pets to the website as your shelter continues to do the wonderful work of rescuing these pets.
 
   ### User Story
-    AS A prospective pet owner
-    I WANT to be provided with options of cats and dogs in need of homes
-    SO THAT I can chose a pet to adopt.
+    AS A pet shelter owner
+    I WANT to be able to upload cats and dogs in need of homes and delete adopted pets
+    SO THAT prospective pet owners can chose a pet to adopt.
+
 
   ## 📚 Table of Contents
   * [🔧 Installation](#installation)
