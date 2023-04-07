@@ -66,6 +66,6 @@
       [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
   ## Questions
-  ✨ Deployed Application Link: https://paws-and-whiskers.herokuapp.com/ <br>
+  ✨ Deployed Application Link: https://pawsandwhiskers.herokuapp.com/ <br>
   ❗ Repository Link: https://github.com/magmesser/pawsandwhiskers <br>
   🎥 Project Presentation Link: [Google Slides Presentation](https://docs.google.com/presentation/d/1T7SAOd17-8rQUoKQ_bwX_KuRDbLOa7Ceiz6Wcdry1f0/edit?usp=sharing)
